@@ -4,14 +4,14 @@
 #
 Name     : R-cclust
 Version  : 0.6.21
-Release  : 13
+Release  : 14
 URL      : https://cran.r-project.org/src/contrib/cclust_0.6-21.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/cclust_0.6-21.tar.gz
 Summary  : Convex Clustering Methods and Clustering Indexes
 Group    : Development/Tools
 License  : GPL-2.0
-Requires: R-cclust-lib
-BuildRequires : clr-R-helpers
+Requires: R-cclust-lib = %{version}-%{release}
+BuildRequires : buildreq-R
 
 %description
 On-line Update algorithm (Hard Competitive Learning) and Neural Gas
@@ -34,11 +34,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523293551
+export SOURCE_DATE_EPOCH=1552726611
 
 %install
+export SOURCE_DATE_EPOCH=1552726611
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523293551
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -73,8 +73,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library cclust|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  cclust || :
 
 
 %files
@@ -98,10 +97,8 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/cclust/help/paths.rds
 /usr/lib64/R/library/cclust/html/00Index.html
 /usr/lib64/R/library/cclust/html/R.css
-/usr/lib64/R/library/cclust/libs/symbols.rds
 
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/cclust/libs/cclust.so
 /usr/lib64/R/library/cclust/libs/cclust.so.avx2
-/usr/lib64/R/library/cclust/libs/cclust.so.avx512
