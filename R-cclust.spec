@@ -4,7 +4,7 @@
 #
 Name     : R-cclust
 Version  : 0.6.23
-Release  : 42
+Release  : 43
 URL      : https://cran.r-project.org/src/contrib/cclust_0.6-23.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/cclust_0.6-23.tar.gz
 Summary  : Convex Clustering Methods and Clustering Indexes
@@ -35,10 +35,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1640906614
+export SOURCE_DATE_EPOCH=1640987975
 
 %install
-export SOURCE_DATE_EPOCH=1640906614
+export SOURCE_DATE_EPOCH=1640987975
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
