@@ -4,7 +4,7 @@
 #
 Name     : R-cclust
 Version  : 0.6.24
-Release  : 46
+Release  : 47
 URL      : https://cran.r-project.org/src/contrib/cclust_0.6-24.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/cclust_0.6-24.tar.gz
 Summary  : Convex Clustering Methods and Clustering Indexes
